@@ -39,7 +39,7 @@ namespace PDV.Infra.Repositorio.Generics
             }
         }
 
-        public async Task<T> GetEntityById(int Id)
+        public async Task<T> GetEntityById(Guid Id)
         { 
             using (var data = new PdvDbContext(_OptionsBuilder))
             {
@@ -97,6 +97,8 @@ namespace PDV.Infra.Repositorio.Generics
 
             disposed = true;
         }
+
+        
         #endregion
     }
 }

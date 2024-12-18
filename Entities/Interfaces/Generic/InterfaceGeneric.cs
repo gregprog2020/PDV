@@ -11,7 +11,7 @@ namespace PDV.Domain.Interfaces.Generic
         Task Add(T Objeto);
         Task Update(T Objeto);
         Task Delete(T Objeto);
-        Task<T> GetEntityById(int Id);
+        Task<T> GetEntityById(Guid Id);
         Task<List<T>> List();
     }
 }

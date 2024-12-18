@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Mvc;
 using PDV.Domain.Interfaces.InterfaceServicos;
 using PDV.Domain.Interfaces.IProduto;
+using PDV.Domain.Services;
 
 namespace WebApi.Controllers
 {
@@ -19,7 +20,18 @@ namespace WebApi.Controllers
         }
 
         [HttpGet("api/produtos")]
-        public 
+        [HttpGet("{id}")]
+        public async Task<IActionResult> ObterTodosProdutos()
+        {
+            var produto = await _iProdutoService.ToList();
+
+            if (produto == null)
+            {
+                return NotFound(new { Mensagem = "Produto não encontrado." });
+            }
+
+            return Ok(produto);
+        }
 
     }
 }
