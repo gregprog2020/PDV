@@ -16,11 +16,11 @@ builder.Services.AddSwaggerGen();
 builder.Services.AddDbContext<PdvDbContext>(options =>
     options.UseNpgsql(builder.Configuration.GetConnectionString("DbConnection")));
 
-// INTERFACE E REPOSITORIO
+/*// INTERFACE E REPOSITORIO
 builder.Services.AddSingleton(typeof(InterfaceGeneric<>), typeof(RepositorioGenerics<>));
 
 // SERVIÇO DOMINIO
-builder.Services.AddSingleton<IProdutoServices, ProdutoServices>();
+builder.Services.AddSingleton<IProdutoServices, ProdutoServices>();*/
 
 var app = builder.Build();
 

@@ -23,7 +23,7 @@ namespace WebApi.Controllers
         [HttpGet("{id}")]
         public async Task<IActionResult> ObterTodosProdutos()
         {
-            var produto = await _iProdutoService.ToList();
+            var produto = await _interfaceProduto.List();
 
             if (produto == null)
             {
